@@ -417,7 +417,7 @@ function updateData(contract) {
     }
 
     contract.balanceOf(web3.eth.defaultAccount, function(e, r) {
-        $('.current-sale .poh-balance').text((r / 1e18*10000).toFixed(4) + " HODL");
+        $('.current-sale .poh-balance').text((r / 1e18*100000).toFixed(4) + " HODL");
         contract.getEtherForTokens(r, function(e, r) {
 	    let bal = convertWeiToEth(r*0.9);
             $(".current-sale .poh-value").text(bal.toFixed(4) + " ETH");
