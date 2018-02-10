@@ -447,13 +447,13 @@ function updateData(contract) {
     })
 
     contract.sellPrice(function(e, r) {
-        let sellPrice = (convertWeiToEth(r)*10);
+        let sellPrice = (convertWeiToEth(r)/10);
         $('.current-sale .poh-sell').text(sellPrice.toFixed(6) + " ETH");
 		$(".current-sale .usd-sell").text("($"+(sellPrice * ethPrice).toFixed(2) + " USD)");
     })
 
     contract.dividends(web3.eth.defaultAccount, function(e, r) {
-	let div = convertWeiToEth(r).toFixed(6);
+	let div = (convertWeiToEth(r).toFixed(6)/10);
 
         $('.current-sale .poh-div').text(div + " ETH");
 	$(".current-sale .usd-div").text("($"+(convertWeiToEth(r) * ethPrice).toFixed(2) + " USD)");
