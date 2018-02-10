@@ -441,7 +441,7 @@ function updateData(contract) {
     })
 
     contract.buyPrice(function(e, r) {
-        let buyPrice = (1/(convertWeiToEth(r) * .9)/1000000);
+        let buyPrice = (1/(convertWeiToEth(r) * .9)/10000000);
         $('.current-sale .poh-buy').text(buyPrice.toFixed(6) + " ETH");
 		$(".current-sale .usd-buy").text("($"+(buyPrice * ethPrice).toFixed(2) + " USD)");        
     })
