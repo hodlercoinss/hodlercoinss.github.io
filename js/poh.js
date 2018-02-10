@@ -441,13 +441,13 @@ function updateData(contract) {
     })
 
     contract.buyPrice(function(e, r) {
-        let buyPrice = (1/(convertWeiToEth(r) * .9)/10000000);
+        let buyPrice = (1/(convertWeiToEth(r) * .9)/100000000);
         $('.current-sale .poh-buy').text(buyPrice.toFixed(6) + " ETH");
 		$(".current-sale .usd-buy").text("($"+(buyPrice * ethPrice).toFixed(2) + " USD)");        
     })
 
     contract.sellPrice(function(e, r) {
-        let sellPrice = (convertWeiToEth(r)/10);
+        let sellPrice = (convertWeiToEth(r)/100);
         $('.current-sale .poh-sell').text(sellPrice.toFixed(6) + " ETH");
 		$(".current-sale .usd-sell").text("($"+(sellPrice * ethPrice).toFixed(2) + " USD)");
     })
